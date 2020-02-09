@@ -16,12 +16,6 @@ class PreferenciasUsuario{
     _prefs = await SharedPreferences.getInstance();
   }
 
-
-//  Ninguna de estass propiedades se usa
-//   bool _colorSecundario;
-//   int _genero;
-//   String _nombre;
-
 //Get y set del genero
 
 get genero{
@@ -32,4 +26,33 @@ set genero(int value){
   _prefs.setInt('genero', value); 
 }
 
+//Get y set del color secundario
+
+get colorSecundario{
+  return _prefs.getBool('colorSecundario')??false;
+}
+
+set colorSecundario(bool value){
+  _prefs.setBool('colorSecundario', value); 
+}
+
+//Get y set del nombre usuario
+
+get nombreUsuario{
+  return _prefs.getString('nombreUsuario')??'';
+}
+
+set nombreUsuario(String value){
+  _prefs.setString('nombreUsuario', value); 
+}
+
+//Get y set de la ultima pagina
+
+get ultimaPagina{
+  return _prefs.getString('ultimaPagina')??'home';
+}
+
+set ultimaPagina(String value){
+  _prefs.setString('ultimaPagina', value); 
+}
 }
